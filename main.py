@@ -13,11 +13,11 @@ for _ in range(3):
     initial_x_cor += 20
 
 screen = Screen()
-screen.setup(width=600, height=600)
+screen.setup(width=300, height=300)
 screen.bgcolor("black")
 screen.title("My Snake Game")
-screen.tracer(3)
-
+screen.tracer(2)
+print(screen.window_width())
 game_is_on = True
 
 # moving segments of snake body as single entity
@@ -26,9 +26,10 @@ while game_is_on:
     time.sleep(1)
     for segment in snake_body:
         segment.forward(20)
+        print(segment.pos())
         # affecting the snake movement once the 'head' segment of the body reaches position (200, 0)
-        if segment.xcor() >= 200.0:
-            segment.setheading(90)  # changes the snakes direction
-            #game_is_on = False # stops the movement of the snake
+        if segment.xcor() >= screen.window_width() or segment.ycor() >= screen.window_height():
+            #segment.setheading(90)  # changes the snakes direction
+            game_is_on = False # stops the movement of the snake
 
 screen.exitonclick()
