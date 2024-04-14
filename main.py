@@ -10,7 +10,7 @@ for _ in range(3):
     new_turtle.goto(initial_x_cor, 0)
     snake_body.append(new_turtle)  # adding each segment to the array to form a 'solid' body
     print(new_turtle.position())
-    initial_x_cor -= 20
+    initial_x_cor += 20
 
 screen = Screen()
 screen.setup(width=600, height=600)
