@@ -1,14 +1,9 @@
-from turtle import Turtle, Screen
-import time
-
-screen = Screen()
+from turtle import Turtle
 
 
 class Snake:
 
     def __init__(self):
-        self.screen = screen
-        self.time = time
         self.snake_body = []  # array that comprises different snake segments
         self.initial_x_cor = 0
         self.create_snake()
@@ -25,8 +20,8 @@ class Snake:
             self.initial_x_cor -= 20
 
     def move_snake(self):
-        screen.update()
-        time.sleep(1)
+        # screen.update()
+        # time.sleep(1)
         # starting with the last segment...
         for segment_number in range(len(self.snake_body) - 1, 0, -1):
             # ...collect the x and y coordinates of the next segment

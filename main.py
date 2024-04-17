@@ -13,6 +13,8 @@ game_is_on = True
 
 # moving segments of snake body as single entity
 while game_is_on:
+    screen.update()
+    time.sleep(0.1)
     snake.move_snake()
 
 screen.exitonclick()
