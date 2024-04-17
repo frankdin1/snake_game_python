@@ -24,9 +24,6 @@ class Snake:
 
     # moving segments of snake body as single entity
     def move_snake(self):
-        # screen.update()
-        # time.sleep(1)
-        # starting with the last segment...
         for segment_number in range(len(self.snake_body) - 1, 0, -1):
             # ...collect the x and y coordinates of the next segment
             new_xcor = self.snake_body[segment_number - 1].xcor()
@@ -35,3 +32,15 @@ class Snake:
             # move the current segment to the position of the next segment
             self.snake_body[segment_number].goto(new_xcor, new_ycor)
         self.snake_body[0].forward(MOVE_DISTANCE)
+
+    def turn_right(self):
+        self.snake_body[0].setheading(0)
+
+    def move_up(self):
+        self.snake_body[0].setheading(90)
+
+    def move_down(self):
+        self.snake_body[0].setheading(270)
+
+    def turn_left(self):
+        self.snake_body[0].setheading(180)
