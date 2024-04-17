@@ -1,5 +1,8 @@
 from turtle import Turtle
 
+MOVE_DISTANCE = 20
+SEGMENT_GAP = 20
+
 
 class Snake:
 
@@ -17,7 +20,7 @@ class Snake:
             new_turtle.goto(self.initial_x_cor, 0)
             self.snake_body.append(new_turtle)  # adding each segment to the array to form a 'solid' body
             print(new_turtle.position())
-            self.initial_x_cor -= 20
+            self.initial_x_cor -= SEGMENT_GAP
 
     # moving segments of snake body as single entity
     def move_snake(self):
@@ -31,4 +34,4 @@ class Snake:
 
             # move the current segment to the position of the next segment
             self.snake_body[segment_number].goto(new_xcor, new_ycor)
-        self.snake_body[0].forward(20)
+        self.snake_body[0].forward(MOVE_DISTANCE)
