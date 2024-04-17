@@ -12,23 +12,11 @@ screen.tracer(0)
 
 screen.listen()
 
+screen.onkey(snake.move_up, "Up")
+screen.onkey(snake.move_down, "Down")
+screen.onkey(snake.turn_left, "Left")
+screen.onkey(snake.turn_right, "Right")
 
-def turn_right():
-    snake.snake_body[0].setheading(0)
-
-def move_up():
-    snake.snake_body[0].setheading(90)
-
-def move_down():
-    snake.snake_body[0].setheading(270)
-def turn_left():
-    snake.snake_body[0].setheading(180)
-
-
-screen.onkey(key="Up", fun=move_up)
-screen.onkey(key="Down", fun=move_down)
-screen.onkey(key="Left", fun=turn_left)
-screen.onkey(key="Right", fun=turn_right)
 game_is_on = True
 while game_is_on:
     screen.update()
