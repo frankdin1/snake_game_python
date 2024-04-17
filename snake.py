@@ -19,6 +19,7 @@ class Snake:
             print(new_turtle.position())
             self.initial_x_cor -= 20
 
+    # moving segments of snake body as single entity
     def move_snake(self):
         # screen.update()
         # time.sleep(1)

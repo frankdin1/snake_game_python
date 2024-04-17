@@ -9,9 +9,9 @@ screen.setup(width=300, height=300)
 screen.bgcolor("black")
 screen.title("My Snake Game")
 screen.tracer(0)
-game_is_on = True
 
-# moving segments of snake body as single entity
+
+game_is_on = True
 while game_is_on:
     screen.update()
     time.sleep(0.1)
