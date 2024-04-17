@@ -2,6 +2,10 @@ from turtle import Turtle
 
 MOVE_DISTANCE = 20
 SEGMENT_GAP = 20
+UP = 90
+DOWN = 270
+LEFT = 180
+RIGHT = 0
 
 
 class Snake:
@@ -10,6 +14,7 @@ class Snake:
         self.snake_body = []  # array that comprises different snake segments
         self.initial_x_cor = 0
         self.create_snake()
+        self.head = self.snake_body[0]
 
     # creating individual segments of the snake body and 'merging' them
     def create_snake(self):
@@ -31,16 +36,20 @@ class Snake:
 
             # move the current segment to the position of the next segment
             self.snake_body[segment_number].goto(new_xcor, new_ycor)
-        self.snake_body[0].forward(MOVE_DISTANCE)
+        self.head.forward(MOVE_DISTANCE)
 
     def turn_right(self):
-        self.snake_body[0].setheading(0)
+        if self.head.heading() != LEFT:
+            self.head.setheading(RIGHT)
 
     def move_up(self):
-        self.snake_body[0].setheading(90)
+        if self.head.heading() != DOWN:
+            self.head.setheading(UP)
 
     def move_down(self):
-        self.snake_body[0].setheading(270)
+        if self.head.heading() != UP:
+            self.head.setheading(DOWN)
 
     def turn_left(self):
-        self.snake_body[0].setheading(180)
+        if self.head.heading() != RIGHT:
+            self.head.setheading(LEFT)
