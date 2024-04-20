@@ -24,7 +24,6 @@ class Snake:
             new_turtle.pu()
             new_turtle.goto(self.initial_x_cor, 0)
             self.snake_body.append(new_turtle)  # adding each segment to the array to form a 'solid' body
-            print(new_turtle.position())
             self.initial_x_cor -= SEGMENT_GAP
 
     # moving segments of snake body as single entity
