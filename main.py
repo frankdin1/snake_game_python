@@ -24,11 +24,11 @@ while game_is_on:
     screen.update()
     time.sleep(0.3)
     snake.move_snake()
-    #print("Distance between snake head and food.")
 
     # Detect collision with food
     if round(snake.head.distance(food)) == 0:
         print("chomp")
+        food.create_dot()
 
 
 screen.exitonclick()
