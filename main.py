@@ -6,8 +6,8 @@ from dot import Dot
 snake = Snake()
 screen = Screen()
 screen.setup(width=400, height=400)
-dot = Dot(screen.window_width(), screen.window_height())
-screen.bgcolor("black")
+food = Dot(screen.window_width(), screen.window_height())
+screen.bgcolor("white")
 screen.title("My Snake Game")
 screen.tracer(0)
 
@@ -22,12 +22,13 @@ screen.onkey(screen.bye, "Escape")
 game_is_on = True
 while game_is_on:
     screen.update()
-    time.sleep(0.2)
+    time.sleep(0.3)
     snake.move_snake()
-    print(f"dot position\tsnake position")
-    print(f"{dot.dot.position()}\t{snake.snake_body[0].position()}")
-    if snake.snake_body[0].position() == dot.dot.position():
-        print("contact")
+    #print("Distance between snake head and food.")
+
+    # Detect collision with food
+    if round(snake.head.distance(food)) == 0:
+        print("chomp")
 
 
 screen.exitonclick()
