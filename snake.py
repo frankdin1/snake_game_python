@@ -20,7 +20,7 @@ class Snake:
     def create_snake(self):
         for _ in range(3):
             new_turtle = Turtle(shape="square")
-            new_turtle.color("white")
+            new_turtle.color("green")
             new_turtle.pu()
             new_turtle.goto(self.initial_x_cor, 0)
             self.snake_body.append(new_turtle)  # adding each segment to the array to form a 'solid' body
@@ -52,3 +52,4 @@ class Snake:
     def turn_left(self):
         if self.head.heading() != RIGHT:
             self.head.setheading(LEFT)
+
