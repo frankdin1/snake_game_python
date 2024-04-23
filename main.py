@@ -17,13 +17,17 @@ screen.onkey(snake.move_up, "Up")
 screen.onkey(snake.move_down, "Down")
 screen.onkey(snake.turn_left, "Left")
 screen.onkey(snake.turn_right, "Right")
+screen.onkey(screen.bye, "Escape")
 
 game_is_on = True
 while game_is_on:
     screen.update()
     time.sleep(0.1)
     snake.move_snake()
-    #print(dot.)
-    print(snake.snake_body[0].position())
+    print(f"dot position\tsnake position")
+    print(f"{dot.dot.position()}\t{snake.snake_body[0].position()}")
+    # if snake.snake_body[0].position() == dot.dot.position():
+    #     print("contact")
+
 
 screen.exitonclick()
